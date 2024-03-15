@@ -30,7 +30,7 @@ function PostDetailsPage() {
     };
 
     fetchAuthor();
-  }, [post, post.userId]); // React to changes in 'post' object
+  }, [post, post.userId]); 
 
   const handleEdit = () => navigate(`/edit-post/${post.id}`);
   const handleBack = () => navigate('/posts');

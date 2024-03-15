@@ -11,7 +11,7 @@ const Landing = () => {
       </p>
       <div>
       <Turtle width={510} height={450} />
-      <img width ="70%" src="https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="niagra image" /><br /> 
+      <img width ="70%" src="https://images.pexels.com/photos/16708854/pexels-photo-16708854/free-photo-of-cherry-tree-in-blossom-in-front-of-a-building.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="niagra image" /><br /> 
       {/* <hr style={{height: '5px', backgroundColor: 'gray' }}/> */}
       </div>
     </Container>

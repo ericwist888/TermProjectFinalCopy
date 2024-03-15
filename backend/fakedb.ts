@@ -32,7 +32,7 @@ export const posts = [
 ];
 
 export const addPost = (post: any) => {
-  const newPostId = posts.length + 1; // Simple logic to increment post ID, adjust based on your ID assignment logic
+  const newPostId = posts.length + 1; // to increment post ID, adjust according to the ID assignment
   post.id = newPostId;
   posts.push(post);
 };

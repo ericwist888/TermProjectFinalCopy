@@ -80,7 +80,7 @@ app.get("/api/posts/:id", (req, res) => {
  *     with an empty/incorrect payload (post)
  */
 
-/// this is added
+///  added
 app.put("/api/posts/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
   const postIndex = posts.findIndex(p => p.id === id);
