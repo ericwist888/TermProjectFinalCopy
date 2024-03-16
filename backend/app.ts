@@ -48,7 +48,7 @@ app.post("/api/user/validation", (req, res) => {
 
 app.get("/api/posts", async (req, res) => {
   // Sleep delay goes here
-  await sleep(3000); 
+  await sleep(1000); 
   res.json(posts);
 });
 

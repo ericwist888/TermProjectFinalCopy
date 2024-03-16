@@ -13,11 +13,6 @@ interface TurtleProps {
 
 const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // creates a ref that you can attach to a <canvas> element in your component. 
-  // This allows you to directly access and manipulate the canvas and its properties, 
-  // such as drawing graphics on it, without triggering re-renders. 
-  // The inclusion of the type <HTMLCanvasElement> ensures that 
-  // you're working with the correct type of DOM element, leveraging TypeScript's type safety.
 
   useEffect(() => {
     const drawLine = (
@@ -50,18 +45,6 @@ const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
       requestAnimationFrame(draw);
     };
 
-    // const drawCircle = (
-    //   ctx: CanvasRenderingContext2D,
-    //   point: Point,
-    //   diameter: number
-    // ) => {
-    //   ctx.beginPath();
-    //   ctx.arc(point.x, point.y, diameter / 2, 0, Math.PI * 2);
-    //   ctx.fillStyle = circleColor ?? 'limegreen'; // Use circleColor prop for circle fill color, fallback to 'limegreen' if undefined
-    //   ctx.fill();
-    //   ctx.closePath();
-    // };
-
     const drawTree = (
       ctx: CanvasRenderingContext2D,
       startPoint: Point,
@@ -78,21 +61,21 @@ const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
       };
 
       // Calculate line width based on depth
-      let lineWidth = isFirstLine ? 20 : 1 + depth;
+      let lineWidth = isFirstLine ? 10 : 1 + depth;
       if (depth === 5) {
-        lineWidth *= 0.8; // Reduce line width by 20% for the fifth last branches
+        lineWidth *= 0.7; // Reduce line width by 20% for the fifth last branches
       }
       if (depth === 4) {
-        lineWidth *= 0.7; // Reduce line width by 30% for the fourth last branches
+        lineWidth *= 0.5; // Reduce line width by 30% for the fourth last branches
       }
       if (depth === 3) {
-        lineWidth *= 0.6; // Reduce line width by 30% for the third last branches
+        lineWidth *= 0.4; // Reduce line width by 30% for the third last branches
       }
       if (depth === 2) {
-        lineWidth *= 0.5; // Reduce line width by 30% for the sedond last branches
+        lineWidth *= 0.3; // Reduce line width by 30% for the sedond last branches
       }
       if (depth === 1) {
-        lineWidth *= 0.4; // Reduce line width by 50% for the last branches
+        lineWidth *= 0.2; // Reduce line width by 50% for the last branches
       }
 
       drawLine(ctx, startPoint, endPoint, lineWidth, 1000); // Draw line gradually over 1000 milliseconds
@@ -118,7 +101,7 @@ const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
       if (ctx) {
         ctx.strokeStyle = 'limegreen'; // Set initial stroke color to bright green
         const startPoint: Point = { x: width / 2, y: height }; // Center the turtle vertically
-        const initialLength = 200; // Initial length of the main branch
+        const initialLength = 100; // Initial length of the main branch
         drawTree(ctx, startPoint, initialLength, Math.PI / 2, 6); // Start angle is pointing upwards, depth controls the number of iterations
       }
     }

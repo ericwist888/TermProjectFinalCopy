@@ -1,0 +1,58 @@
+/* Landing.page.module.css */
+
+/* Adjusting content area with reduced spacing */
+.content {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   gap: 5px; /* Reduced gap for closer element spacing */
+ }
+ 
+ /* Enlarging the Turtle canvas */
+ .content canvas {
+   flex-grow: 1.2;
+   max-width: 90%;
+   height: auto;
+   transform: scale(1.0);
+   transform-origin: center center;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   border-radius: 6px;
+   margin-left: -10%;
+ }
+ 
+ /* Reducing the image size for larger screens */
+ .image {
+   flex-grow: 0.5;
+   width: 20%; /* Reduced size for larger screens */
+   position: relative;
+   left: 15%; /* Adjusted to re-center the image */
+   transform: translateX(-35%);
+   border-radius: 6px;
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+   .content {
+     flex-direction: column;
+   }
+ 
+   /* Adjust Turtle canvas for smaller screens */
+   .content canvas {
+     width: 100%;
+     transform: scale(1);
+     margin: 0 auto;
+     margin-bottom: 5px; /* Reduced margin for closer spacing */
+   }
+ 
+   /* Increasing image size for smaller screens by 10% */
+   .image {
+     width: 70%; /* Increased size for mobile screens */
+     left: 35%;
+     transform: translateX(-50%);
+     margin-top: 5px; /* Reduced margin to decrease space */
+     margin-bottom: 5px;
+     margin-left: auto;
+     margin-right: auto;
+   }
+ }
+ 
