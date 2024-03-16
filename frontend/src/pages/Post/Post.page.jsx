@@ -2,7 +2,7 @@ import DOMAIN from "../../services/endpoint";
 import axios from "axios";
 import { ArticleCardImage } from "../../components/misc/ArticleCardImage";
 import { SimpleGrid, Container } from "@mantine/core";
-import { LoadSpinner } from "./loadSpinner";
+import { LoadSpinner } from "./LoadSpinner";
 import { defer } from 'react-router-dom'
 import { useEffect, useState } from "react";
 
