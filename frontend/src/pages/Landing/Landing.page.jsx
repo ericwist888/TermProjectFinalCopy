@@ -1,6 +1,5 @@
-// Landing.page.jsx
 import { Container } from '@mantine/core';
-import styles from './Landing.page.module.css'; // Import the CSS module
+import styles from './Landing.page.module.css'; 
 import Turtle from '../../components/misc/Turtle';
 
 const Landing = () => {

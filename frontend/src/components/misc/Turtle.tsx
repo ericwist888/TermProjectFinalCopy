@@ -34,7 +34,7 @@ const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
         ctx.moveTo(startPoint.x, startPoint.y);
         ctx.lineTo(currentX, currentY);
         ctx.lineWidth = lineWidth; // Set line width
-        ctx.strokeStyle = 'limegreen'; // Set line color to bright green
+        ctx.strokeStyle = 'limegreen';
         ctx.stroke();
 
         if (progress < 1) {
@@ -85,15 +85,10 @@ const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
         const newAngle = angle + Math.PI / 3.15 * 1.25; // Increase angle by 10%
 
         drawTree(ctx, endPoint, newLength, newAngle, depth - 1, false);
-        drawTree(ctx, endPoint, newLength, angle - Math.PI / 3.15 * 1.1, depth - 1, false); // Increased angle by 10%
-        drawTree(ctx, endPoint, newLength, angle + Math.PI / 6 * 1.1, depth - 1, false); // Additional branch
-        drawTree(ctx, endPoint, newLength, angle - Math.PI / 6 * 1.1, depth - 1, false); // Additional branch
-
-        // if (depth === 1) {
-        //   // Draw circles at the end of the last lines
-        //   drawCircle(ctx, endPoint, 7); // Circle diameter set to 7 pixels
-        // }
-      }, 1000); // Delay increased by 5000 milliseconds
+        drawTree(ctx, endPoint, newLength, angle - Math.PI / 3.15 * 1.1, depth - 1, false); 
+        drawTree(ctx, endPoint, newLength, angle + Math.PI / 6 * 1.1, depth - 1, false); 
+        drawTree(ctx, endPoint, newLength, angle - Math.PI / 6 * 1.1, depth - 1, false); 
+      }, 1000); 
     };
 
     if (canvasRef.current) {
@@ -102,10 +97,10 @@ const Turtle: React.FC<TurtleProps> = ({ width, height}) => {
         ctx.strokeStyle = 'limegreen'; // Set initial stroke color to bright green
         const startPoint: Point = { x: width / 2, y: height }; // Center the turtle vertically
         const initialLength = 100; // Initial length of the main branch
-        drawTree(ctx, startPoint, initialLength, Math.PI / 2, 6); // Start angle is pointing upwards, depth controls the number of iterations
+        drawTree(ctx, startPoint, initialLength, Math.PI / 2, 6); 
       }
     }
-  }, [width, height]); // Include circleColor in dependency array
+  }, [width, height]); 
 
   return <canvas ref={canvasRef} width={width} height={height} style={{ border: '2px solid white' }} />;
 };
